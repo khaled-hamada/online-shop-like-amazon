@@ -47,11 +47,13 @@ class Cart(object):
             self.cart[product_id] = {'quantity':0, 
                                      'price':str(product.price)}
             
-            if override_quantity:
-                self.cart[product_id]['quantity'] = quantity
-            else:
-                self.cart[product_id]['quantity'] += quantity
+        if override_quantity:
+            self.cart[product_id]['quantity'] = quantity
+        else:
+            self.cart[product_id]['quantity'] += quantity
         #update session data
+        if self.cart[product_id]['quantity'] <= 0:
+            del self.cart[product_id]
         self.save()
 
     def save(self):

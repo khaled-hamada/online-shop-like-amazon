@@ -14,3 +14,12 @@ More details soon ..
 
 ----------------------------------------
 **ch7** 
+1. create shop categories and products
+2. create custom shopping cart and attach it to sessions
+3. implement a custom context processor to attach user cart to all req.
+4. create orders system to allow users to place orders
+5. use celery to run async. tasks with rabbitMQ and flower
+
+----------------------------------
+**ch8**
+...
