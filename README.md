@@ -5,6 +5,8 @@ using pip install -r requirements.txt
 3. create a .env file in the same directory as settings.py and grab env variables from it, you can follow this link
 https://alicecampkin.medium.com/how-to-set-up-environment-variables-in-django-f3c4db78c55f
 
+**run celery on windows**
+celery -A myshop worker -l info --pool=solo
 ------------------------
 Online Shop Like Amazon 
 -------------------------
@@ -22,4 +24,12 @@ More details soon ..
 
 ----------------------------------
 **ch8**
+1. Create Payment System
+2. Integrate braintree third parity API for handliing payments
+3. Create custom admin views and actions
+4. create an action to allow stuff users to both a) export orders data to csv file
+5. Intgrate weasyPrint lib to generate pdf files from orders data
+6. send order details an pdf files to users using emails
+-------------------
+**ch9**
 ...

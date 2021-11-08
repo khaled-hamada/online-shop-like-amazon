@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'order.apps.OrderConfig',
+    'payment.apps.PaymentConfig',
+
     
 ]
 
@@ -132,7 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATIC_DIR = os.path.join(BASE_DIR, 'static/')
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
@@ -147,3 +149,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ### sessions settings and shoping carts
 CART_SESSION_ID = 'cart'
+
+# Braintree settings
+BRAINTREE_MERCHANT_ID = env('BRAINTREE_MERCHANT_ID')  # Merchant ID
+BRAINTREE_PUBLIC_KEY = env('BRAINTREE_PUBLIC_KEY')  # Public Key
+BRAINTREE_PRIVATE_KEY = env('BRAINTREE_PRIVATE_KEY')  # Private key
+
+import braintree
+BRAINTREE_CONF = braintree.Configuration(
+    braintree.Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
+
+#just for testing sending email successfully
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
