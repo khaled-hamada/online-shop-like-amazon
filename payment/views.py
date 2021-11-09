@@ -11,7 +11,7 @@ gateway = braintree.BraintreeGateway(settings.BRAINTREE_CONF)
 def payment_process(request):
     order_id = request.session.get('order_id')
     order = get_object_or_404(Order, id=order_id)
-    total_cost = order.get_total_cost()
+    total_cost = order.get_total_cost_after_discount()
 
     if request.method == 'POST':
         #retrieve nonce token 

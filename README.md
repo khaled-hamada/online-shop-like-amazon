@@ -32,4 +32,7 @@ More details soon ..
 6. send order details an pdf files to users using emails
 -------------------
 **ch9**
-...
+1. populate db base with fake data using faker lib. so it can help us in building the recommendation system
+2. create a copoun system like the one at udemy and apply to to orders from shopping
+ cart to creating orders through sessions
+3. ...
